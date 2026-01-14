@@ -1,6 +1,6 @@
 # Image Gallery 🎨
 
-🔗 Live Demo: https://github.com/Karthik9633/image-gallery
+🔗 Live Demo: https://karthik9633.github.io/image-gallery/
 
 A modern, responsive image gallery with a **blurred background (Blux effect)** built using **HTML, CSS, and JavaScript**.
 
