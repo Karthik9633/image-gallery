@@ -18,18 +18,20 @@ let index = 0;
 const img = document.getElementById("img");
 const prev = document.getElementById("prev");
 const next = document.getElementById("next");
-const slide = document.getElementById("slide");
+const slideBox = document.getElementById("slide");
 const bg = document.getElementById("bg");
 
 img.src = images[index];
 bg.style.backgroundImage = `url(${images[index]})`;
 
 images.forEach((_, i) => {
-  const slide = document.createElement("span");
-  slide.className = "slide";
-  if (i === 0) slide.classList.add("active");
-  slide.appendChild(slide);
-  slide.addEventListener("click", () => {
+  const dot = document.createElement("span");
+  dot.className = "slide";
+  if (i === 0) dot.classList.add("active");
+
+  slideBox.appendChild(dot);
+
+  dot.addEventListener("click", () => {
     index = i;
     update();
   });
