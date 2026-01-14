@@ -11,48 +11,48 @@ const images = [
   "../images/img10.jpg",
   "../images/img11.jpg",
   "../images/img12.jpg"
-];
+]
 
-let index = 0;
+let index = 0
 
-const img = document.getElementById("img");
-const prev = document.getElementById("prev");
-const next = document.getElementById("next");
-const slideBox = document.getElementById("slide");
-const bg = document.getElementById("bg");
+const img = document.getElementById("img")
+const prev = document.getElementById("prev")
+const next = document.getElementById("next")
+const slideBox = document.getElementById("slide")
+const bg = document.getElementById("bg")
 
-img.src = images[index];
-bg.style.backgroundImage = `url(${images[index]})`;
+img.src = images[index]
+bg.style.backgroundImage = `url(${images[index]})`
 
 images.forEach((_, i) => {
-  const dot = document.createElement("span");
-  dot.className = "slide";
-  if (i === 0) dot.classList.add("active");
+  const dot = document.createElement("span")
+  dot.className = "slide"
+  if (i === 0) dot.classList.add("active")
 
-  slideBox.appendChild(dot);
+  slideBox.appendChild(dot)
 
   dot.addEventListener("click", () => {
-    index = i;
-    update();
-  });
-});
+    index = i
+    update()
+  })
+})
 
-const slides = document.querySelectorAll(".slide");
+const slides = document.querySelectorAll(".slide")
 
 function update() {
-  img.src = images[index];
-  bg.style.backgroundImage = `url(${images[index]})`;
+  img.src = images[index]
+  bg.style.backgroundImage = `url(${images[index]})`
 
-  slides.forEach(slide => slide.classList.remove("active"));
-  slides[index].classList.add("active");
+  slides.forEach(slide => slide.classList.remove("active"))
+  slides[index].classList.add("active")
 }
 
 next.onclick = () => {
-  index = (index + 1) % images.length;
-  update();
-};
+  index = (index + 1) % images.length
+  update()
+}
 
 prev.onclick = () => {
-  index = (index - 1 + images.length) % images.length;
-  update();
-};
+  index = (index - 1 + images.length) % images.length
+  update()
+}
